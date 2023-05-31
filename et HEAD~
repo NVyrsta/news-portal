@@ -1,0 +1,77 @@
+[33mcommit 6038326f1d319f67cfd7e936b1a2e2eb6c04e944[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: @nataliia.vyrsta <natali.vyrsta@gmail.com>
+Date:   Wed May 31 15:19:44 2023 +0300
+
+    fix code style add eslint file
+
+[33mcommit ec04319251fd66fba9794f6f00017559a071b177[m
+Author: @nataliia.vyrsta <natali.vyrsta@gmail.com>
+Date:   Wed May 31 13:56:05 2023 +0300
+
+    add demo video
+
+[33mcommit 68794d88b49fefb9f08dc67c470992c78c854138[m
+Author: @nataliia.vyrsta <natali.vyrsta@gmail.com>
+Date:   Wed May 31 13:46:55 2023 +0300
+
+    last fixes
+
+[33mcommit 00331de4b713ca5912a804b7d441edd0b705c872[m
+Author: @nataliia.vyrsta <natali.vyrsta@gmail.com>
+Date:   Wed May 31 13:24:30 2023 +0300
+
+    add console log
+
+[33mcommit 103d02f58e12fc128fe9d10692597763974e800d[m
+Author: @nataliia.vyrsta <natali.vyrsta@gmail.com>
+Date:   Wed May 31 13:19:07 2023 +0300
+
+    fix bug
+
+[33mcommit bc78eea9942ff8cb766834204732dcd8b882a3a2[m
+Author: @nataliia.vyrsta <natali.vyrsta@gmail.com>
+Date:   Wed May 31 13:08:31 2023 +0300
+
+    add default category
+
+[33mcommit 5eb99e578b0c2788c2d8f451bc6a41b7aabd2212[m
+Author: @nataliia.vyrsta <natali.vyrsta@gmail.com>
+Date:   Wed May 31 12:59:25 2023 +0300
+
+    add condition
+
+[33mcommit 03e407fab203cdd662dde8c7ae82159d8ccecc9b[m
+Author: @nataliia.vyrsta <natali.vyrsta@gmail.com>
+Date:   Wed May 31 12:49:32 2023 +0300
+
+    fix bug
+
+[33mcommit 9b18c5b351d9a45db7ba873a514dfd2a24e0111e[m
+Author: @nataliia.vyrsta <natali.vyrsta@gmail.com>
+Date:   Wed May 31 12:43:08 2023 +0300
+
+    fix path bug
+
+[33mcommit 044ab36937c4b1c5eba36b23525ac94dbf1b97e1[m
+Author: @nataliia.vyrsta <natali.vyrsta@gmail.com>
+Date:   Wed May 31 12:37:33 2023 +0300
+
+    fix path bug
+
+[33mcommit ee4575f9cb843efda158707d405523f209dec136[m
+Author: @nataliia.vyrsta <natali.vyrsta@gmail.com>
+Date:   Wed May 31 12:29:12 2023 +0300
+
+    deploy
+
+[33mcommit 733faff73dd20daa433ddd58bdba99b795706f82[m
+Author: @nataliia.vyrsta <natali.vyrsta@gmail.com>
+Date:   Wed May 31 12:10:38 2023 +0300
+
+    first commit
+
+[33mcommit 1a946695166932ca780906c87f72f14cc9e24487[m
+Author: @nataliia.vyrsta <natali.vyrsta@gmail.com>
+Date:   Tue May 30 21:13:16 2023 +0300
+
+    Initialize project using Create React App
