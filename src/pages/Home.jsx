@@ -151,7 +151,7 @@ const Home = () => {
 
       <div className="container mt-4">
         <div className="row">
-          {filteredArticles &&
+          {filteredArticles.length > 0 &&
             filteredArticles.map((article) => {
               const { id } = article;
               return (
