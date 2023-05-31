@@ -49,30 +49,20 @@ const Home = () => {
         const response = await fetch(
           `https://newsapi.org/v2/everything?q=${category}&pageSize=${articlesCount}&apiKey=da54110976114d1f890ab10bcaafe077`
         );
-        console.log(
-          `https://newsapi.org/v2/everything?q=${category}&pageSize=${articlesCount}&apiKey=da54110976114d1f890ab10bcaafe077`
-        );
         const data = await response.json();
-        console.log(data); // Log the data object to inspect its structure
 
         dispatch(resetArticles());
 
-        const fetchedArticles =
-          data.articles && Array.isArray(data.articles)
-            ? data.articles.map((article) => ({
-                ...article,
-                id: article.url
-              }))
-            : [];
+        const fetchedArticles = data.articles.map((article) => ({
+          ...article,
+          id: article.url
+        }));
 
         fetchedArticles.forEach((article) => {
           dispatch(addArticle(article));
         });
       } catch (error) {
         console.log('Fetch error', error);
-        console.log(
-          `https://newsapi.org/v2/everything?q=${category}&pageSize=${articlesCount}&apiKey=da54110976114d1f890ab10bcaafe077`
-        );
       }
     }
 
@@ -161,18 +151,17 @@ const Home = () => {
 
       <div className="container mt-4">
         <div className="row">
-          {filteredArticles.length > 0 &&
-            filteredArticles.map((article) => {
-              const { id } = article;
-              return (
-                <div key={id} className="col-lg-4 col-md-6 col-sm-12">
-                  <Article
-                    article={article}
-                    combinedArticles={combinedArticles}
-                  />
-                </div>
-              );
-            })}
+          {filteredArticles.map((article) => {
+            const { id } = article;
+            return (
+              <div key={id} className="col-lg-4 col-md-6 col-sm-12">
+                <Article
+                  article={article}
+                  combinedArticles={combinedArticles}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
 
