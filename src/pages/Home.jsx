@@ -49,20 +49,27 @@ const Home = () => {
         const response = await fetch(
           `https://newsapi.org/v2/everything?q=${category}&pageSize=${articlesCount}&apiKey=da54110976114d1f890ab10bcaafe077`
         );
+        console.log(`https://newsapi.org/v2/everything?q=${category}&pageSize=${articlesCount}&apiKey=da54110976114d1f890ab10bcaafe077`);
         const data = await response.json();
 
         dispatch(resetArticles());
 
-        const fetchedArticles = data.articles.map((article) => ({
+  const fetchedArticles =
+    data.articles && Array.isArray(data.articles)
+      ? data.articles.map((article) => ({
           ...article,
           id: article.url
-        }));
+        }))
+      : [];
 
         fetchedArticles.forEach((article) => {
           dispatch(addArticle(article));
         });
       } catch (error) {
         console.log('Fetch error', error);
+        console.log(
+          `https://newsapi.org/v2/everything?q=${category}&pageSize=${articlesCount}&apiKey=da54110976114d1f890ab10bcaafe077`
+        );
       }
     }
 
