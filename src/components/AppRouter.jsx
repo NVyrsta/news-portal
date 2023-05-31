@@ -17,15 +17,21 @@ const AppRouter = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={user ? <Home /> : <Navigate to="/login" />} />
-        <Route path="/news-portal" element={user ? <Home /> : <Navigate to="/login" />} />
         <Route
-          path="/add"
-          element={user ? <AddArticle /> : <Navigate to="/login" />}
+          path="/"
+          element={user ? <Home /> : <Navigate to="/news-portal/login" />}
         />
         <Route
-          path="/edit/:id"
-          element={user ? <Edit /> : <Navigate to="/login" />}
+          path="/news-portal"
+          element={user ? <Home /> : <Navigate to="/news-portal/login" />}
+        />
+        <Route
+          path="/news-portal/add"
+          element={user ? <AddArticle /> : <Navigate to="/news-portal/login" />}
+        />
+        <Route
+          path="/news-portal/edit/:id"
+          element={user ? <Edit /> : <Navigate to="/news-portal/login" />}
         />
         <Route
           path="/login"

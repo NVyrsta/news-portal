@@ -90,7 +90,7 @@ const Home = () => {
       <Navbar />
 
       <div className="container mt-4">
-        <Link to="/add" className="btn btn-primary ml-2">
+        <Link to="/news-portal/add" className="btn btn-primary ml-2">
           <FiPlus size={20} className="mr-1" />
           Add Article
         </Link>

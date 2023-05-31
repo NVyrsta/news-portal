@@ -114,7 +114,10 @@ const Article = ({ article, combinedArticles }) => {
 
         {isUserAuthor(author) && (
           <div className="d-flex justify-content-between align-items-center mt-2">
-            <Link to={`/edit/${id}`} className="btn btn-outline-primary btn-sm">
+            <Link
+              to={`/news-portal/edit/${id}`}
+              className="btn btn-outline-primary btn-sm"
+            >
               <BsPencilSquare size={20} className="mr-1" />
               Edit
             </Link>
