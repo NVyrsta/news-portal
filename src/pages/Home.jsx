@@ -151,17 +151,18 @@ const Home = () => {
 
       <div className="container mt-4">
         <div className="row">
-          {filteredArticles.map((article) => {
-            const { id } = article;
-            return (
-              <div key={id} className="col-lg-4 col-md-6 col-sm-12">
-                <Article
-                  article={article}
-                  combinedArticles={combinedArticles}
-                />
-              </div>
-            );
-          })}
+          {filteredArticles &&
+            filteredArticles.map((article) => {
+              const { id } = article;
+              return (
+                <div key={id} className="col-lg-4 col-md-6 col-sm-12">
+                  <Article
+                    article={article}
+                    combinedArticles={combinedArticles}
+                  />
+                </div>
+              );
+            })}
         </div>
       </div>
 
