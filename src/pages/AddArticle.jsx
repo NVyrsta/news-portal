@@ -33,7 +33,7 @@ const AddArticle = () => {
     setDescription('');
     Notification('Article added successfully', 'success');
 
-    navigate('/');
+    navigate('/news-portal');
   };
 
   return (
@@ -77,7 +77,7 @@ const AddArticle = () => {
             onChange={(e) => setDescription(e.target.value)}
           />
         </div>
-        
+
         <button type="submit" className="btn btn-primary">
           Submit
         </button>

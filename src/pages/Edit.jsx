@@ -38,7 +38,7 @@ const Edit = () => {
     dispatch(updateMyArticle(updatedArticle));
     Notification('Article updated successfully', 'success');
 
-    navigate('/');
+    navigate('/news-portal');
   };
 
   return (
@@ -57,7 +57,7 @@ const Edit = () => {
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
-        
+
         <div className="mb-3">
           <label htmlFor="urlToImage" className="form-label">
             Image URL
