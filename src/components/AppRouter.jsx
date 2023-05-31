@@ -18,6 +18,7 @@ const AppRouter = () => {
     <Router>
       <Routes>
         <Route path="/" element={user ? <Home /> : <Navigate to="/login" />} />
+        <Route path="/news-portal" element={user ? <Home /> : <Navigate to="/login" />} />
         <Route
           path="/add"
           element={user ? <AddArticle /> : <Navigate to="/login" />}

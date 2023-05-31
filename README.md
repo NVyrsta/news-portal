@@ -47,4 +47,3 @@ This project is licensed under the [MIT License](LICENSE). Feel free to modify a
 For any inquiries or feedback regarding the News Portal application, please contact Nataliia Vyrsta via GitHub: [GitHub Profile](https://github.com/NVyrsta)
 
 ---
-Note: This is a professional README file that follows the standard conventions and requirements. Feel free to make any necessary modifications to suit your specific project.
