@@ -82,7 +82,7 @@ function Home() {
   );
 
   return (
-    <div className="container">
+    <div className="container d-flex flex-column min-vh-100">
       <Navbar />
 
       <div className="container mt-4">
@@ -93,7 +93,10 @@ function Home() {
       </div>
 
       <div className="container mt-4 mb-4">
-        <div className="btn-group d-flex flex-wrap">
+        <div
+          className="btn-group d-flex flex-wrap"
+          style={{ cursor: 'pointer' }}
+        >
           <button
             className="btn btn-secondary"
             onClick={() => handleCategoryClick('business')}
@@ -145,7 +148,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="container mt-4">
+      <div className="container mt-4 flex-grow-1">
         <div className="row">
           {filteredArticles.map((article) => {
             const { id } = article;

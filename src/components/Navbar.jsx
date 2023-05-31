@@ -16,7 +16,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light px-4">
       <Link to="/news-portal" className="navbar-brand">
         <GiNewspaper size={32} className="mr-2" />
         News Portal
@@ -49,8 +49,7 @@ function Navbar() {
           <li className="nav-item">
             {user && (
               <p className="nav-link">
-                <span className="welcome-text">Welcome back:</span>
-                {' '}
+                <span className="welcome-text">Welcome back:</span>{' '}
                 <span className="user-name">{user}</span>
               </p>
             )}
