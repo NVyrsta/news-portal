@@ -49,18 +49,21 @@ const Home = () => {
         const response = await fetch(
           `https://newsapi.org/v2/everything?q=${category}&pageSize=${articlesCount}&apiKey=da54110976114d1f890ab10bcaafe077`
         );
-        console.log(`https://newsapi.org/v2/everything?q=${category}&pageSize=${articlesCount}&apiKey=da54110976114d1f890ab10bcaafe077`);
+        console.log(
+          `https://newsapi.org/v2/everything?q=${category}&pageSize=${articlesCount}&apiKey=da54110976114d1f890ab10bcaafe077`
+        );
         const data = await response.json();
+        console.log(data); // Log the data object to inspect its structure
 
         dispatch(resetArticles());
 
-  const fetchedArticles =
-    data.articles && Array.isArray(data.articles)
-      ? data.articles.map((article) => ({
-          ...article,
-          id: article.url
-        }))
-      : [];
+        const fetchedArticles =
+          data.articles && Array.isArray(data.articles)
+            ? data.articles.map((article) => ({
+                ...article,
+                id: article.url
+              }))
+            : [];
 
         fetchedArticles.forEach((article) => {
           dispatch(addArticle(article));
