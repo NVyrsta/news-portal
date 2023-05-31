@@ -1,20 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { setQuery, clearQuery } from '../features/querySlice';
 import { GiNewspaper } from 'react-icons/gi';
 import { FiDelete, FiLogOut } from 'react-icons/fi';
+import { setQuery, clearQuery } from '../features/querySlice';
 import { resetUser } from '../features/userSlice';
 
-const Navbar = () => {
+function Navbar() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const query = useSelector((state) => state.query);
-  
-    const handleLogout = () => {
-      dispatch(resetUser());
-    };
 
+  const handleLogout = () => {
+    dispatch(resetUser());
+  };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -50,7 +49,8 @@ const Navbar = () => {
           <li className="nav-item">
             {user && (
               <p className="nav-link">
-                <span className="welcome-text">Welcome back:</span>{' '}
+                <span className="welcome-text">Welcome back:</span>
+                {' '}
                 <span className="user-name">{user}</span>
               </p>
             )}
@@ -68,4 +68,4 @@ const Navbar = () => {
   );
 }
 
-export default Navbar
+export default Navbar;

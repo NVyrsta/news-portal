@@ -1,8 +1,8 @@
 import './App.css';
-import AppRouter from './components/AppRouter';
 import { Provider } from 'react-redux';
-import store from './store/store';
 import { ToastContainer } from 'react-toastify';
+import AppRouter from './components/AppRouter';
+import store from './store/store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 

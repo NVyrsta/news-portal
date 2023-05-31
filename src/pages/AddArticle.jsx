@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addMyArticle } from '../features/myArticlesSlice';
 import { useNavigate } from 'react-router-dom';
+import { addMyArticle } from '../features/myArticlesSlice';
 import Notification from '../components/Notification';
 
-const AddArticle = () => {
+function AddArticle() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ const AddArticle = () => {
       title,
       urlToImage,
       description,
-      author: user
+      author: user,
     };
 
     dispatch(addMyArticle(article));
@@ -84,6 +84,6 @@ const AddArticle = () => {
       </form>
     </div>
   );
-};
+}
 
 export default AddArticle;

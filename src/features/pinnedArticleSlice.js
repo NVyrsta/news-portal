@@ -4,14 +4,10 @@ const pinnedArticleSlice = createSlice({
   name: 'pinnedArticle',
   initialState: null,
   reducers: {
-    pinArticle: (_, action) => {
-      return action.payload;
-    },
+    pinArticle: (_, action) => action.payload,
 
-    unpinArticle: () => {
-      return null;
-    }
-  }
+    unpinArticle: () => null,
+  },
 });
 
 export const { pinArticle, unpinArticle } = pinnedArticleSlice.actions;

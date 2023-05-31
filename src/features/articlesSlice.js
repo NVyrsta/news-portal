@@ -7,14 +7,11 @@ const articlesSlice = createSlice({
     addArticle: (state, action) => {
       state.push(action.payload);
     },
-    
-    resetArticles: () => {
-      return [];
-    }
-  }
+
+    resetArticles: () => [],
+  },
 });
 
-export const { addArticle, removeArticle, resetArticles } =
-  articlesSlice.actions;
+export const { addArticle, removeArticle, resetArticles } = articlesSlice.actions;
 
 export default articlesSlice.reducer;

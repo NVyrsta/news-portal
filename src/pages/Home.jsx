@@ -2,10 +2,11 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import { FiPlus } from 'react-icons/fi';
 import { addArticle, resetArticles } from '../features/articlesSlice';
 import {
   incrementArticlesCount,
-  resetArticlesCount
+  resetArticlesCount,
 } from '../features/articlesCountSlice';
 import { setCategory } from '../features/categorySlice';
 
@@ -13,9 +14,7 @@ import Article from '../components/Article';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-import { FiPlus } from 'react-icons/fi';
-
-const Home = () => {
+function Home() {
   const dispatch = useDispatch();
 
   const articles = useSelector((state) => state.articles);
@@ -32,22 +31,20 @@ const Home = () => {
   }
 
   combinedArticles = [...combinedArticles, ...myArticles, ...articles].filter(
-    (article) => article !== null
+    (article) => article !== null,
   );
 
   combinedArticles = [pinnedArticle, ...myArticles, ...articles].filter(
-    (article, index, arr) => {
-      return (
-        index === arr.findIndex((a) => a && article && a.id === article.id)
-      );
-    }
+    (article, index, arr) => (
+      index === arr.findIndex((a) => a && article && a.id === article.id)
+    ),
   );
 
   useEffect(() => {
     async function fetchNews() {
       try {
         const response = await fetch(
-          `https://newsapi.org/v2/everything?q=${category}&pageSize=${articlesCount}&apiKey=da54110976114d1f890ab10bcaafe077`
+          `https://newsapi.org/v2/everything?q=${category}&pageSize=${articlesCount}&apiKey=da54110976114d1f890ab10bcaafe077`,
         );
         const data = await response.json();
 
@@ -55,7 +52,7 @@ const Home = () => {
 
         const fetchedArticles = data.articles.map((article) => ({
           ...article,
-          id: article.url
+          id: article.url,
         }));
 
         fetchedArticles.forEach((article) => {
@@ -80,9 +77,8 @@ const Home = () => {
   };
 
   const filteredArticles = combinedArticles.filter(
-    (article) =>
-      article.title.toLowerCase().includes(query.toLowerCase()) ||
-      article.description.toLowerCase().includes(query.toLowerCase())
+    (article) => article.title.toLowerCase().includes(query.toLowerCase())
+      || article.description.toLowerCase().includes(query.toLowerCase()),
   );
 
   return (
@@ -174,6 +170,6 @@ const Home = () => {
       <Footer />
     </div>
   );
-};
+}
 
 export default Home;

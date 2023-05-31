@@ -4,7 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { updateMyArticle } from '../features/myArticlesSlice';
 import Notification from '../components/Notification';
 
-const Edit = () => {
+function Edit() {
   const dispatch = useDispatch();
   const { id } = useParams();
   const myArticles = useSelector((state) => state.myArticles);
@@ -32,7 +32,7 @@ const Edit = () => {
       title,
       urlToImage,
       description,
-      author: user
+      author: user,
     };
 
     dispatch(updateMyArticle(updatedArticle));
@@ -89,6 +89,6 @@ const Edit = () => {
       </form>
     </div>
   );
-};
+}
 
 export default Edit;

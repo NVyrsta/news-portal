@@ -5,23 +5,23 @@ import {
   BsPencilSquare,
   BsTrash,
   BsBookmarkPlus,
-  BsBookmarkCheck
+  BsBookmarkCheck,
 } from 'react-icons/bs';
+import scrollreveal from 'scrollreveal';
 import { pinArticle, unpinArticle } from '../features/pinnedArticleSlice';
 import { removeMyArticle } from '../features/myArticlesSlice';
-import Notification from '../components/Notification';
-import scrollreveal from 'scrollreveal';
+import Notification from './Notification';
 
-const Article = ({ article, combinedArticles }) => {
-  const { id, urlToImage, description, title, author, url } = article;
+function Article({ article, combinedArticles }) {
+  const {
+    id, urlToImage, description, title, author, url,
+  } = article;
   const dispatch = useDispatch();
 
   const user = useSelector((state) => state.user);
   const pinnedArticle = useSelector((state) => state.pinnedArticle);
 
-  const isUserAuthor = (author) => {
-    return user === author;
-  };
+  const isUserAuthor = (author) => user === author;
   const handlePin = (id) => {
     if (pinnedArticle && pinnedArticle.id === id) {
       dispatch(unpinArticle());
@@ -43,12 +43,12 @@ const Article = ({ article, combinedArticles }) => {
       origin: 'left',
       distance: '20px',
       duration: 500,
-      reset: false
+      reset: false,
     });
 
-    sr.reveal(`.card`, {
+    sr.reveal('.card', {
       opacity: 0,
-      interval: 300
+      interval: 300,
     });
   }, []);
 
@@ -78,7 +78,7 @@ const Article = ({ article, combinedArticles }) => {
               marginRight: '0.5rem',
               backgroundColor: 'white',
               padding: '4px',
-              borderRadius: '4px'
+              borderRadius: '4px',
             }}
           />
         ) : (
@@ -95,19 +95,24 @@ const Article = ({ article, combinedArticles }) => {
               marginRight: '0.5rem',
               backgroundColor: 'white',
               padding: '4px',
-              borderRadius: '4px'
+              borderRadius: '4px',
             }}
           />
         )}
 
         <h5 className="card-title">{title}</h5>
 
-        {author && <p className="card-text">Author: {author}</p>}
+        {author && (
+        <p className="card-text">
+          Author:
+          {author}
+        </p>
+        )}
 
         {description && <p className="card-text">{description}</p>}
 
         {url && (
-          <a href={url} className="btn btn-primary" target="_blank">
+          <a href={url} className="btn btn-primary" target="_blank" rel="noreferrer">
             Read More
           </a>
         )}
@@ -134,6 +139,6 @@ const Article = ({ article, combinedArticles }) => {
       </div>
     </article>
   );
-};
+}
 
 export default Article;

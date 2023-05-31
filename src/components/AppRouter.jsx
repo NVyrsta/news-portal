@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate
+  Navigate,
 } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Home from '../pages/Home';
@@ -11,7 +11,7 @@ import LoginPage from '../pages/LoginPage';
 import AddArticle from '../pages/AddArticle';
 import Edit from '../pages/Edit';
 
-const AppRouter = () => {
+function AppRouter() {
   const user = useSelector((state) => state.user);
 
   return (
@@ -41,6 +41,6 @@ const AppRouter = () => {
       </Routes>
     </Router>
   );
-};
+}
 
 export default AppRouter;

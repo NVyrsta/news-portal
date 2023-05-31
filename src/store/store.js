@@ -15,8 +15,8 @@ const store = configureStore({
     myArticles: myArticlesReducer,
     pinnedArticle: pinnedArticleReducer,
     query: queryReducer,
-    category: categoryReducer
-  }
+    category: categoryReducer,
+  },
 });
 
 export default store;

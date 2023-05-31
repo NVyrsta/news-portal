@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../features/userSlice';
 
-const LoginPage = () => {
+function LoginPage() {
   const dispatch = useDispatch();
   const [username, setUsername] = useState('');
 
@@ -38,6 +38,6 @@ const LoginPage = () => {
       </div>
     </div>
   );
-};
+}
 
 export default LoginPage;

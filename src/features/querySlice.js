@@ -4,14 +4,10 @@ const querySlice = createSlice({
   name: 'query',
   initialState: '',
   reducers: {
-    setQuery: (_, action) => {
-      return action.payload;
-    },
+    setQuery: (_, action) => action.payload,
 
-    clearQuery: () => {
-      return '';
-    }
-  }
+    clearQuery: () => '',
+  },
 });
 
 export const { setQuery, clearQuery } = querySlice.actions;
