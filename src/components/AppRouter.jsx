@@ -34,10 +34,10 @@ const AppRouter = () => {
           element={user ? <Edit /> : <Navigate to="/news-portal/login" />}
         />
         <Route
-          path="/login"
+          path="/news-portal/login"
           element={user ? <Navigate to="/" /> : <LoginPage />}
         />
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="*" element={<Navigate to="/news-portal" />} />
       </Routes>
     </Router>
   );
