@@ -1,5 +1,9 @@
 # Project: News Portal
 
+## Demo
+
+You can watch a demo video of the project [here](https://reccloud.com/u/tscgwvf).
+
 ## Description
 This project is a News Portal application that allows users to access articles categorized by various topics. The articles are fetched from the News API (https://newsapi.org/) to provide up-to-date and reliable information. Users have the ability to pin or unpin articles, enabling them to save their favorite articles for later reference. The application also includes a login feature to ensure personalized user experiences. Furthermore, there is a search functionality that allows users to search for articles based on their titles or descriptions. In addition to consuming articles from external sources, users can contribute by adding, editing, and deleting articles within the application.
 
