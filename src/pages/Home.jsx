@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -14,7 +14,10 @@ import Article from '../components/Article';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-function Home() {
+import categories from '../utils/categories';
+
+const Home = () => {
+  const [fetchError, setFetchError] = useState(null);
   const dispatch = useDispatch();
 
   const articles = useSelector((state) => state.articles);
@@ -59,7 +62,14 @@ function Home() {
           dispatch(addArticle(article));
         });
       } catch (error) {
-        console.log('Fetch error', error);
+        console.log(
+          'Fetch error: You have made too many requests recently. Developer accounts are limited to 100 requests over a 24 hour period (50 requests available every 12 hours). Please upgrade to a paid plan if you need more requests.',
+          error
+        );
+      } finally {
+        setFetchError(
+          `You have made too many requests recently. Developer accounts are limited to 100 requests over a 24 hour period (50 requests available every 12 hours). Please upgrade to a paid plan if you need more requests.`
+        );
       }
     }
 
@@ -97,58 +107,21 @@ function Home() {
           className="btn-group d-flex flex-wrap"
           style={{ cursor: 'pointer' }}
         >
-          <button
-            className="btn btn-secondary"
-            onClick={() => handleCategoryClick('business')}
-          >
-            Business
-          </button>
-
-          <button
-            className="btn btn-secondary"
-            onClick={() => handleCategoryClick('entertainment')}
-          >
-            Entertainment
-          </button>
-
-          <button
-            className="btn btn-secondary"
-            onClick={() => handleCategoryClick('general')}
-          >
-            General
-          </button>
-
-          <button
-            className="btn btn-secondary"
-            onClick={() => handleCategoryClick('health')}
-          >
-            Health
-          </button>
-
-          <button
-            className="btn btn-secondary"
-            onClick={() => handleCategoryClick('science')}
-          >
-            Science
-          </button>
-
-          <button
-            className="btn btn-secondary"
-            onClick={() => handleCategoryClick('sports')}
-          >
-            Sports
-          </button>
-
-          <button
-            className="btn btn-secondary"
-            onClick={() => handleCategoryClick('technology')}
-          >
-            Technology
-          </button>
+          {categories.map((category) => (
+            <button
+              key={category}
+              className="btn btn-secondary"
+              onClick={() => handleCategoryClick(category)}
+            >
+              {category}
+            </button>
+          ))}
         </div>
       </div>
 
       <div className="container mt-4 flex-grow-1">
+        {!!fetchError && <p className="text-danger">{fetchError}</p>}
+        
         <div className="row">
           {filteredArticles.map((article) => {
             const { id } = article;
